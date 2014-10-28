@@ -1,0 +1,22 @@
+﻿<Window x:Class="LuckDraw.View.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="抽奖程序" Height="600" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Menu Height="25" Margin="0" VerticalAlignment="Top" Background="{x:Null}">
+            <MenuItem Header="File" Height="25">
+                <MenuItem x:Name="MenuItem_File_Exit" Header="Exit" Click="MenuItem_File_Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Help" Height="25">
+                <MenuItem Header="About"/>
+            </MenuItem>
+        </Menu>
+        <TabControl Margin="0,25,0,0" BorderThickness="0,1,0,0" Padding="0">
+            <TabItem Header="抽奖">
+                <Grid Background="White">
+                    <Frame x:Name="Frame_1" Content="" Margin="0" NavigationUIVisibility="Hidden"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
