@@ -12,7 +12,7 @@ namespace LuckDraw.View.Windows
 
         private void InitializeFrameContent()
         {
-            this.Frame_1.Content = new View.Pages.Page_多选一();
+            this.Frame_1.Content = new View.Pages.Page_Draw1();
         }
 
         private void MenuItem_File_Exit_Click(object sender, RoutedEventArgs e)
