@@ -19,5 +19,10 @@ namespace LuckDraw.View.Windows
         {
             this.Close();
         }
+
+        private void MenuItem_Help_About_Click(object sender, RoutedEventArgs e)
+        {
+            new View.Windows.About().ShowDialog();
+        }
     }
 }

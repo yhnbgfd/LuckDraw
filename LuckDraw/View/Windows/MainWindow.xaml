@@ -8,7 +8,7 @@
                 <MenuItem x:Name="MenuItem_File_Exit" Header="Exit" Click="MenuItem_File_Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Help" Height="25">
-                <MenuItem Header="About"/>
+                <MenuItem x:Name="MenuItem_Help_About" Header="About" Click="MenuItem_Help_About_Click"/>
             </MenuItem>
         </Menu>
         <TabControl Margin="0,25,0,0" BorderThickness="0,1,0,0" Padding="0">
