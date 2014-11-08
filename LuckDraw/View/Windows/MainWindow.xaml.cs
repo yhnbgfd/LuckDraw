@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Input;
 
 namespace LuckDraw.View.Windows
 {
@@ -23,6 +24,19 @@ namespace LuckDraw.View.Windows
         private void MenuItem_Help_About_Click(object sender, RoutedEventArgs e)
         {
             new View.Windows.About().ShowDialog();
+        }
+
+        private void Button_Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.ButtonState == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
     }
 }
