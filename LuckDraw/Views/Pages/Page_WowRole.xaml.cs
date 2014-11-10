@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,18 +14,13 @@ namespace LuckDraw.View.Pages
         public Page_WowRole()
         {
             InitializeComponent();
-            new ViewModel.WowRole.WowRoleViewModel().InitList_Occupation(ref _occupation);
             InitializeCheckBox();
         }
 
         private void InitializeCheckBox()
         {
             this.CheckBox_Occupation.IsChecked = true;
-            //this.CheckBox_Race.IsChecked = true;
-            //this.CheckBox_Gender.IsChecked = true;
             CheckBox_Occupation_Click(null, null);
-            //CheckBox_Race_Click(null, null);
-            //CheckBox_Gender_Click(null, null);
         }
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)

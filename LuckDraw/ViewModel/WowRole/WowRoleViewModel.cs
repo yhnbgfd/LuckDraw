@@ -34,6 +34,7 @@ namespace LuckDraw.ViewModel.WowRole
 
         public void InitList_Occupation(ref List<string> occupation)
         {
+            occupation.Clear();
             foreach (string str in Enum.GetNames(typeof(Models.WowRole.Enum_WowRole.Enum_Occupation)))
             {
                 occupation.Add(str);
@@ -42,6 +43,7 @@ namespace LuckDraw.ViewModel.WowRole
 
         public void InitList_Race(ref List<string> race)
         {
+            race.Clear();
             foreach (string str in Enum.GetNames(typeof(Models.WowRole.Enum_WowRole.Enum_Race)))
             {
                 race.Add(str);
@@ -50,6 +52,7 @@ namespace LuckDraw.ViewModel.WowRole
 
         public void InitList_Gender(ref List<string> gender)
         {
+            gender.Clear();
             gender.Add("男");
             gender.Add("女");
         }
