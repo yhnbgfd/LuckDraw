@@ -1,11 +1,12 @@
-﻿<Window x:Class="LuckDraw.View.Windows.About"
+﻿<Window x:Class="LuckDraw.Views.Windows.About"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="About" Height="150" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="About" Height="160" Width="300" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <Label Content="抽奖程序 By Lugia" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <Label Content="yhnbgfd@gmail.com" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Label_Version" Content="软件版本：" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top"/>
+        <Label Content="源码：https://github.com/yhnbgfd/LuckDraw" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

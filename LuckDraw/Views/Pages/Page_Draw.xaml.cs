@@ -6,13 +6,13 @@ using System.Windows.Controls;
 
 namespace LuckDraw.View.Pages
 {
-    public partial class Page_Draw1 : Page
+    public partial class Page_Draw : Page
     {
         string[] _drawList = new string[0];
         List<string> _drawResultList = new List<string>();
         bool _isAllowDuplicateWinning = true;
 
-        public Page_Draw1()
+        public Page_Draw()
         {
             InitializeComponent();
         }

@@ -72,14 +72,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\Pages\Page_Draw1.xaml.cs">
-      <DependentUpon>Page_Draw1.xaml</DependentUpon>
+    <Compile Include="Models\WowRole\Enum_WowRole.cs" />
+    <Compile Include="Models\WowRole\Model_WowRole.cs" />
+    <Compile Include="ViewModel\WowRole\WowRoleViewModel.cs" />
+    <Compile Include="Views\Pages\Page_Draw.xaml.cs">
+      <DependentUpon>Page_Draw.xaml</DependentUpon>
     </Compile>
-    <Page Include="View\Windows\About.xaml">
+    <Page Include="Views\Pages\Page_WowRole.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Windows\MainWindow.xaml">
+    <Page Include="Views\Windows\About.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -87,14 +94,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\Windows\About.xaml.cs">
+    <Compile Include="Views\Pages\Page_WowRole.xaml.cs">
+      <DependentUpon>Page_WowRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Windows\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Windows\MainWindow.xaml.cs">
+    <Compile Include="Views\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Pages\Page_Draw1.xaml">
+    <Page Include="Views\Pages\Page_Draw.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -125,6 +135,10 @@
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Sign.pfx" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Images\WowLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace LuckDraw.View.Windows
+namespace LuckDraw.Views.Windows
 {
     public partial class MainWindow : Window
     {
@@ -13,7 +13,8 @@ namespace LuckDraw.View.Windows
 
         private void InitializeFrameContent()
         {
-            this.Frame_1.Content = new View.Pages.Page_Draw1();
+            this.Frame_1.Content = new View.Pages.Page_Draw();
+            this.Frame_WowRole.Content = new View.Pages.Page_WowRole();
         }
 
         private void MenuItem_File_Exit_Click(object sender, RoutedEventArgs e)
@@ -23,7 +24,7 @@ namespace LuckDraw.View.Windows
 
         private void MenuItem_Help_About_Click(object sender, RoutedEventArgs e)
         {
-            new View.Windows.About().ShowDialog();
+            new Views.Windows.About().ShowDialog();
         }
 
         private void Button_Close_Click(object sender, RoutedEventArgs e)

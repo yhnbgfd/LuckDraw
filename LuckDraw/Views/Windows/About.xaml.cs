@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace LuckDraw.View.Windows
+namespace LuckDraw.Views.Windows
 {
     public partial class About : Window
     {

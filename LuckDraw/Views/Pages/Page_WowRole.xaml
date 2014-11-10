@@ -1,0 +1,63 @@
+﻿<Page x:Class="LuckDraw.View.Pages.Page_WowRole"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="391" d:DesignWidth="681"
+	Title="Page_WowRole">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <CheckBox x:Name="CheckBox_Occupation" Content="职业" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Click="CheckBox_Occupation_Click"/>
+        <CheckBox x:Name="CheckBox_Race" Content="种族" Grid.Column="1" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Click="CheckBox_Race_Click"/>
+        <CheckBox x:Name="CheckBox_Gender" Content="性别" Grid.Column="2" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Click="CheckBox_Gender_Click"/>
+        <StackPanel x:Name="StackPanel_Occupation" Grid.Row="1">
+            <CheckBox x:Name="CheckBox_Occupation_DK" Content="死亡骑士" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FFB61A38"/>
+            <CheckBox x:Name="CheckBox_Occupation_XD" Content="德鲁伊"   HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FFBD5E09"/>
+            <CheckBox x:Name="CheckBox_Occupation_LR" Content="猎人"     HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FF8EAD60"/>
+            <CheckBox x:Name="CheckBox_Occupation_FS" Content="法师"     HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FF5AB1D1"/>
+            <CheckBox x:Name="CheckBox_Occupation_WS" Content="武僧"     HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FF01E8A7"/>
+            <CheckBox x:Name="CheckBox_Occupation_QS" Content="圣骑士"   HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FFD57CA4"/>
+            <CheckBox x:Name="CheckBox_Occupation_MS" Content="牧师"     HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FFBEB9B1"/>
+            <CheckBox x:Name="CheckBox_Occupation_DZ" Content="潜行者"   HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FFE3DA5E"/>
+            <CheckBox x:Name="CheckBox_Occupation_SM" Content="萨满祭司" HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FF1F4DD9"/>
+            <CheckBox x:Name="CheckBox_Occupation_ZS" Content="战士"     HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FF785F42"/>
+            <CheckBox x:Name="CheckBox_Occupation_SS" Content="术士"     HorizontalAlignment="Left" Margin="25,10,0,0" VerticalAlignment="Top" Foreground="#FF8A76B2"/>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel_Race" Grid.Column="1" Grid.Row="1">
+            <CheckBox Content="熊猫人"   HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="德莱尼人" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="矮人"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="人类"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="侏儒"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="暗夜精灵" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="狼人"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="血精灵"   HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="亡灵"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="地精"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="兽人"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="牛头人"   HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox Content="巨魔"     HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel x:Name="StackPanel_Gender" Grid.Column="2" Grid.Row="1">
+            <CheckBox x:Name="CheckBox_Male" Content="男" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+            <CheckBox x:Name="CheckBox_Female" Content="女" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"/>
+        </StackPanel>
+        <Button x:Name="Button_Start" Content="摇号" Grid.Column="3" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Width="75" Click="Button_Start_Click"/>
+        <Label x:Name="Label_Result" Content="" Grid.Column="3" Margin="0,40,0,0" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Foreground="White" Padding="0,100,0,0" VerticalAlignment="Top" Width="300" Height="140" HorizontalAlignment="Center">
+            <Label.Background>
+                <ImageBrush ImageSource="/LuckDraw;component/Resources/Images/WowLogo.png" Stretch="Uniform"/>
+            </Label.Background>
+        </Label>
+    </Grid>
+</Page>
