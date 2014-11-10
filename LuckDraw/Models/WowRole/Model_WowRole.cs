@@ -9,6 +9,6 @@ namespace LuckDraw.Models.WowRole
     {
         public string Occupation { get; set; }
         public string Race { get; set; }
-        public int Gender { get; set; }
+        public string Gender { get; set; }
     }
 }

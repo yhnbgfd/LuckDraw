@@ -26,13 +26,15 @@ namespace LuckDraw.View.Pages
 
         private void FilterRace()
         {
+            ReadOccupation();
+
             int race = 0;
-            var fields = typeof(Enum_WowRole.Enum_Occupation).GetFields();
+            var fields = typeof(Data_WowRole.Enum_Occupation).GetFields();
             foreach (var f in fields)
             {
                 if (_occupation.Contains(f.Name))
                 {
-                    Enum_WowRole.Enum_Occupation t = (Enum_WowRole.Enum_Occupation)Enum.Parse(typeof(Enum_WowRole.Enum_Occupation), f.Name);
+                    Data_WowRole.Enum_Occupation t = (Data_WowRole.Enum_Occupation)Enum.Parse(typeof(Data_WowRole.Enum_Occupation), f.Name);
                     race = race | t.GetHashCode();
                 }
             }
@@ -65,9 +67,60 @@ namespace LuckDraw.View.Pages
             }
         }
 
+        private void ReadOccupation()
+        {
+            _occupation.Clear();
+            foreach (var a in this.StackPanel_Occupation.Children)
+            {
+                if (a.GetType() == typeof(CheckBox) && ((CheckBox)a).IsChecked == true)
+                {
+                    _occupation.Add(((CheckBox)a).Content.ToString());
+                }
+            }
+        }
+
+        private void ReadRace()
+        {
+            _race.Clear();
+            foreach (var a in this.StackPanel_Race.Children)
+            {
+                if (a.GetType() == typeof(CheckBox) && ((CheckBox)a).IsChecked == true)
+                {
+                    _race.Add(((CheckBox)a).Content.ToString());
+                }
+            }
+        }
+
+        private void ReadGender()
+        {
+            _gender.Clear();
+            foreach (var a in this.StackPanel_Gender.Children)
+            {
+                if (a.GetType() == typeof(CheckBox) && ((CheckBox)a).IsChecked == true)
+                {
+                    _gender.Add(((CheckBox)a).Content.ToString());
+                }
+            }
+        }
+
         private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-            this.Label_Result.Content = new ViewModel.WowRole.WowRoleViewModel().Roll(_occupation, _race, _gender);
+            ReadOccupation();
+            ReadRace();
+            ReadGender();
+
+            Model_WowRole result = new ViewModel.WowRole.WowRoleViewModel().Roll(_occupation, _race, _gender);
+            this.Label_Result.Content = result.Occupation + " " + result.Race + " " + result.Gender;
+            while (result.Occupation.Length < 12)
+            {
+                result.Occupation += " ";
+            }
+            while (result.Race.Length < 10)
+            {
+                result.Race += " ";
+            }
+            this.TextBox_ResultList.Text += "\n" + result.Occupation + "\t" + result.Race + "\t" + result.Gender;
+            this.TextBox_ResultList.ScrollToEnd();
         }
 
         private void CheckBox_Occupation_Click(object sender, RoutedEventArgs e)
@@ -79,14 +132,6 @@ namespace LuckDraw.View.Pages
                 {
                     ((CheckBox)item).IsChecked = isCheck;
                 }
-            }
-            if (isCheck)
-            {
-                new ViewModel.WowRole.WowRoleViewModel().InitList_Occupation(ref _occupation);
-            }
-            else
-            {
-                _occupation.Clear();
             }
         }
 
@@ -100,14 +145,6 @@ namespace LuckDraw.View.Pages
                     ((CheckBox)item).IsChecked = isCheck;
                 }
             }
-            if (isCheck)
-            {
-                new ViewModel.WowRole.WowRoleViewModel().InitList_Race(ref _race);
-            }
-            else
-            {
-                _race.Clear();
-            }
         }
 
         private void CheckBox_Gender_Click(object sender, RoutedEventArgs e)
@@ -120,57 +157,17 @@ namespace LuckDraw.View.Pages
                     ((CheckBox)item).IsChecked = isCheck;
                 }
             }
-            if (isCheck)
-            {
-                new ViewModel.WowRole.WowRoleViewModel().InitList_Gender(ref _gender);
-            }
-            else
-            {
-                _gender.Clear();
-            }
         }
 
         private void CheckBox_Occupation_Details_Click(object sender, RoutedEventArgs e)
         {
-            bool isCheck = (bool)(sender as CheckBox).IsChecked;
-            string content = (sender as CheckBox).Content.ToString();
-            if (isCheck && !_occupation.Contains(content))
-            {
-                _occupation.Add(content);
-            }
-            else
-            {
-                _occupation.Remove(content);
-            }
             FilterRace();
         }
 
-        private void CheckBox_Race_Details_Click(object sender, RoutedEventArgs e)
+        private void Button_ClearResultList_Click(object sender, RoutedEventArgs e)
         {
-            bool isCheck = (bool)(sender as CheckBox).IsChecked;
-            string content = (sender as CheckBox).Content.ToString();
-            if (isCheck && !_race.Contains(content))
-            {
-                _race.Add(content);
-            }
-            else
-            {
-                _race.Remove(content);
-            }
-        }
-
-        private void CheckBox_Gender_Details_Click(object sender, RoutedEventArgs e)
-        {
-            bool isCheck = (bool)(sender as CheckBox).IsChecked;
-            string content = (sender as CheckBox).Content.ToString();
-            if (isCheck && !_gender.Contains(content))
-            {
-                _gender.Add(content);
-            }
-            else
-            {
-                _gender.Remove(content);
-            }
+            this.TextBox_ResultList.Text = "Roll号结果：";
+            this.Label_Result.Content = "";
         }
     }
 }

@@ -75,7 +75,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\WowRole\Enum_WowRole.cs" />
+    <Compile Include="Models\WowRole\Data_WowRole.cs" />
     <Compile Include="Models\WowRole\Model_WowRole.cs" />
     <Compile Include="ViewModel\WowRole\WowRoleViewModel.cs" />
     <Compile Include="Views\Pages\Page_Draw.xaml.cs">

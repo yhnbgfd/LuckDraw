@@ -1,6 +1,7 @@
-﻿namespace LuckDraw.Models.WowRole
+﻿using System.Collections.Generic;
+namespace LuckDraw.Models.WowRole
 {
-    class Enum_WowRole
+    class Data_WowRole
     {
         public enum Enum_Occupation
         {
@@ -33,6 +34,26 @@
             兽人,
             牛头人,
             巨魔
+        }
+
+        public static Dictionary<string, string[]> OccupationRace
+        {
+            get
+            {
+                Dictionary<string, string[]> dict = new Dictionary<string, string[]>();
+                dict.Add("死亡骑士", "德莱尼人 矮人 人类 侏儒 暗夜精灵 狼人 血精灵 亡灵 地精 兽人 牛头人 巨魔".Split(' '));
+                dict.Add("德鲁伊", "暗夜精灵 狼人 牛头人 巨魔".Split(' '));
+                dict.Add("猎人", "熊猫人 德莱尼人 矮人 人类 暗夜精灵 狼人 血精灵 亡灵 地精 兽人 牛头人 巨魔".Split(' '));
+                dict.Add("法师", "熊猫人 德莱尼人 矮人 人类 侏儒 暗夜精灵 狼人 血精灵 亡灵 地精 兽人 巨魔".Split(' '));
+                dict.Add("武僧", "熊猫人 德莱尼人 矮人 人类 侏儒 暗夜精灵 血精灵 亡灵 兽人 牛头人 巨魔".Split(' '));
+                dict.Add("圣骑士", "德莱尼人 矮人 人类 血精灵 牛头人".Split(' '));
+                dict.Add("牧师", "熊猫人 德莱尼人 矮人 人类 侏儒 暗夜精灵 狼人 血精灵 亡灵 地精 牛头人 巨魔".Split(' '));
+                dict.Add("潜行者", "熊猫人 矮人 人类 侏儒 暗夜精灵 狼人 血精灵 亡灵 地精 兽人 巨魔".Split(' '));
+                dict.Add("萨满祭司", "熊猫人 德莱尼人 矮人 地精 兽人 牛头人 巨魔".Split(' '));
+                dict.Add("战士", "熊猫人 德莱尼人 矮人 人类 侏儒 暗夜精灵 狼人 血精灵 亡灵 地精 兽人 牛头人 巨魔".Split(' '));
+                dict.Add("术士", "矮人 人类 侏儒 狼人 血精灵 亡灵 地精 兽人 巨魔".Split(' '));
+                return dict;
+            }
         }
     }
 }
