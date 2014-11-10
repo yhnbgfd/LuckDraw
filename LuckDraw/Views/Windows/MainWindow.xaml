@@ -14,15 +14,15 @@
         <TabControl Margin="10,25,10,10" BorderThickness="1" Padding="0">
             <TabItem Header="抽奖">
                 <Grid Background="White">
-                    <Frame x:Name="Frame_1" Content="" Margin="0" NavigationUIVisibility="Hidden"/>
+                    <Frame FocusVisualStyle="{x:Null}" x:Name="Frame_1" Content="" Margin="0" NavigationUIVisibility="Hidden"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Wow角色">
                 <Grid Background="White">
-                    <Frame x:Name="Frame_WowRole" Content="" Margin="0" NavigationUIVisibility="Hidden"/>
+                    <Frame FocusVisualStyle="{x:Null}" x:Name="Frame_WowRole" Content="" Margin="0" NavigationUIVisibility="Hidden"/>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Button x:Name="Button_Close" Content="X" HorizontalAlignment="Right" Margin="0,0,10,0" Width="25" BorderThickness="0" Click="Button_Close_Click" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" VerticalAlignment="Top" Focusable="False"/>
+        <Button FocusVisualStyle="{x:Null}" x:Name="Button_Close" Content="X" HorizontalAlignment="Right" Margin="0,0,10,0" Width="25" BorderThickness="0" Click="Button_Close_Click" Background="{x:Null}" BorderBrush="{x:Null}" Padding="0" VerticalAlignment="Top" Focusable="False"/>
     </Grid>
 </Window>
