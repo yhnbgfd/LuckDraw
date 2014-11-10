@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="抽奖程序" Height="400" Width="600" WindowStartupLocation="CenterScreen" MinWidth="400" MinHeight="300" ResizeMode="CanResizeWithGrip" WindowStyle="None" AllowsTransparency="True" Background="#FFD6DBE9" MouseLeftButtonDown="Window_MouseLeftButtonDown">
     <Grid>
-        <Menu Height="25" Margin="0,0,60,0" VerticalAlignment="Top" Background="{x:Null}">
-            <MenuItem Header="File" VerticalAlignment="Center" Height="25">
+        <Menu Height="25" Margin="10,0,60,0" VerticalAlignment="Top" Background="{x:Null}">
+            <MenuItem Header="File" VerticalAlignment="Center" Height="25" RenderTransformOrigin="0.5,0.5">
                 <MenuItem x:Name="MenuItem_File_Exit" Header="Exit" Click="MenuItem_File_Exit_Click"/>
             </MenuItem>
             <MenuItem Header="Help" VerticalAlignment="Center" Height="25">
