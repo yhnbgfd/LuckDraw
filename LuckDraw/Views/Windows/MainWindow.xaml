@@ -11,7 +11,7 @@
                 <MenuItem x:Name="MenuItem_Help_About" Header="About" Click="MenuItem_Help_About_Click"/>
             </MenuItem>
         </Menu>
-        <TabControl Margin="10,25,10,10" BorderThickness="1" Padding="0">
+        <TabControl Margin="10,25,10,10" BorderThickness="1" Padding="0" FontSize="14">
             <TabItem Header="抽奖">
                 <Grid Background="White">
                     <Frame FocusVisualStyle="{x:Null}" x:Name="Frame_1" Content="" Margin="0" NavigationUIVisibility="Hidden"/>
