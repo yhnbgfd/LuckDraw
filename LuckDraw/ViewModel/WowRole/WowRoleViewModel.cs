@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LuckDraw.ViewModel.WowRole
 {
@@ -26,19 +25,33 @@ namespace LuckDraw.ViewModel.WowRole
             return result;
         }
 
-        public void InitDictionary(ref List<string> occupation, ref List<string> race, ref List<string> gender)
+        public void InitList(ref List<string> occupation, ref List<string> race, ref List<string> gender)
+        {
+            InitList_Occupation(ref occupation);
+            InitList_Race(ref race);
+            InitList_Gender(ref gender);
+        }
+
+        public void InitList_Occupation(ref List<string> occupation)
         {
             foreach (string str in Enum.GetNames(typeof(Models.WowRole.Enum_WowRole.Enum_Occupation)))
             {
                 occupation.Add(str);
             }
+        }
+
+        public void InitList_Race(ref List<string> race)
+        {
             foreach (string str in Enum.GetNames(typeof(Models.WowRole.Enum_WowRole.Enum_Race)))
             {
                 race.Add(str);
             }
+        }
+
+        public void InitList_Gender(ref List<string> gender)
+        {
             gender.Add("男");
             gender.Add("女");
         }
-
     }
 }

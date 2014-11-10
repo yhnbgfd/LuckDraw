@@ -13,18 +13,18 @@ namespace LuckDraw.View.Pages
         public Page_WowRole()
         {
             InitializeComponent();
-            new ViewModel.WowRole.WowRoleViewModel().InitDictionary(ref _occupation, ref _race, ref _gender);
+            new ViewModel.WowRole.WowRoleViewModel().InitList_Occupation(ref _occupation);
             InitializeCheckBox();
         }
 
         private void InitializeCheckBox()
         {
             this.CheckBox_Occupation.IsChecked = true;
-            this.CheckBox_Race.IsChecked = true;
-            this.CheckBox_Gender.IsChecked = true;
+            //this.CheckBox_Race.IsChecked = true;
+            //this.CheckBox_Gender.IsChecked = true;
             CheckBox_Occupation_Click(null, null);
-            CheckBox_Race_Click(null, null);
-            CheckBox_Gender_Click(null, null);
+            //CheckBox_Race_Click(null, null);
+            //CheckBox_Gender_Click(null, null);
         }
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)
@@ -42,6 +42,14 @@ namespace LuckDraw.View.Pages
                     ((CheckBox)item).IsChecked = isCheck;
                 }
             }
+            if (isCheck)
+            {
+                new ViewModel.WowRole.WowRoleViewModel().InitList_Occupation(ref _occupation);
+            }
+            else
+            {
+                _occupation.Clear();
+            }
         }
 
         private void CheckBox_Race_Click(object sender, RoutedEventArgs e)
@@ -56,7 +64,7 @@ namespace LuckDraw.View.Pages
             }
             if (isCheck)
             {
-
+                new ViewModel.WowRole.WowRoleViewModel().InitList_Race(ref _race);
             }
             else
             {
@@ -76,7 +84,7 @@ namespace LuckDraw.View.Pages
             }
             if (isCheck)
             {
-
+                new ViewModel.WowRole.WowRoleViewModel().InitList_Gender(ref _gender);
             }
             else
             {
