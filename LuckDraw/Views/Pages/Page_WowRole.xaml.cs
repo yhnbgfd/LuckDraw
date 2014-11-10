@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LuckDraw.View.Pages
 {
     public partial class Page_WowRole : Page
     {
+        private List<string> _occupation = new List<string>();
+        private List<string> _race = new List<string>();
+        private List<string> _gender = new List<string>();
+
         public Page_WowRole()
         {
             InitializeComponent();
+            new ViewModel.WowRole.WowRoleViewModel().InitDictionary(ref _occupation, ref _race, ref _gender);
             InitializeCheckBox();
         }
 
@@ -34,7 +29,7 @@ namespace LuckDraw.View.Pages
 
         private void Button_Start_Click(object sender, RoutedEventArgs e)
         {
-            this.Label_Result.Content = "德拉诺之王";
+            this.Label_Result.Content = new ViewModel.WowRole.WowRoleViewModel().Roll(_occupation, _race, _gender);
         }
 
         private void CheckBox_Occupation_Click(object sender, RoutedEventArgs e)
@@ -59,6 +54,14 @@ namespace LuckDraw.View.Pages
                     ((CheckBox)item).IsChecked = isCheck;
                 }
             }
+            if (isCheck)
+            {
+
+            }
+            else
+            {
+                _race.Clear();
+            }
         }
 
         private void CheckBox_Gender_Click(object sender, RoutedEventArgs e)
@@ -70,6 +73,56 @@ namespace LuckDraw.View.Pages
                 {
                     ((CheckBox)item).IsChecked = isCheck;
                 }
+            }
+            if (isCheck)
+            {
+
+            }
+            else
+            {
+                _gender.Clear();
+            }
+        }
+
+        private void CheckBox_Occupation_Details_Click(object sender, RoutedEventArgs e)
+        {
+            bool isCheck = (bool)(sender as CheckBox).IsChecked;
+            string content = (sender as CheckBox).Content.ToString();
+            if (isCheck && !_occupation.Contains(content))
+            {
+                _occupation.Add(content);
+            }
+            else
+            {
+                _occupation.Remove(content);
+            }
+        }
+
+        private void CheckBox_Race_Details_Click(object sender, RoutedEventArgs e)
+        {
+            bool isCheck = (bool)(sender as CheckBox).IsChecked;
+            string content = (sender as CheckBox).Content.ToString();
+            if (isCheck && !_race.Contains(content))
+            {
+                _race.Add(content);
+            }
+            else
+            {
+                _race.Remove(content);
+            }
+        }
+
+        private void CheckBox_Gender_Details_Click(object sender, RoutedEventArgs e)
+        {
+            bool isCheck = (bool)(sender as CheckBox).IsChecked;
+            string content = (sender as CheckBox).Content.ToString();
+            if (isCheck && !_gender.Contains(content))
+            {
+                _gender.Add(content);
+            }
+            else
+            {
+                _gender.Remove(content);
             }
         }
     }
