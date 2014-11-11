@@ -59,7 +59,7 @@
                 <ImageBrush ImageSource="/LuckDraw;component/Resources/Images/WowLogo.png" Stretch="Uniform"/>
             </Label.Background>
         </Label>
-        <TextBox x:Name="TextBox_ResultList" Grid.Column="3" Margin="10,150,10,10" Grid.Row="1" TextWrapping="Wrap" Text="Roll号结果：" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+        <TextBox x:Name="TextBox_ResultList" Grid.Column="3" Margin="0,150,0,10" Grid.Row="1" TextWrapping="Wrap" Text="Roll号结果：" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" Width="300" HorizontalAlignment="Center"/>
         <Button x:Name="Button_ClearResultList" Content="清空结果" Grid.Column="3" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="Center" Width="75" HorizontalContentAlignment="Center" Click="Button_ClearResultList_Click"/>
     </Grid>
 </Page>
